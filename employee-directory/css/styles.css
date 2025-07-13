@@ -1,0 +1,210 @@
+/* Base Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f5f7;
+  color: #212529;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #343a40 !important;
+  padding: 0.8rem 1rem;
+}
+
+.navbar-brand {
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: #ffffff !important;
+}
+
+.navbar .form-control {
+  width: 250px;
+  max-width: 100%;
+}
+
+/* Buttons */
+.btn-success {
+  background-color: #198754;
+  border-color: #157347;
+}
+
+.btn-outline-primary {
+  border-color: #0d6efd;
+  color: #0d6efd;
+}
+
+.btn-outline-primary:hover {
+  background-color: #0d6efd;
+  color: white;
+}
+
+.btn-outline-danger:hover {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* Container + Pagination */
+.container {
+  flex: 1;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #343a40;
+  border-color: #343a40;
+}
+
+.pagination .page-link {
+  color: #343a40;
+}
+
+/* Employee Cards */
+.employee-card {
+  border: 1px solid #ced4da;
+  border-radius: 12px;
+  background-color: #ffffff;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease-in-out;
+  height: 100%;
+}
+
+.employee-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+.employee-card h5 {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.employee-card p {
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+
+.employee-card .btn {
+  font-size: 0.8rem;
+  padding: 4px 10px;
+}
+
+/* Form Styling */
+form label {
+  font-weight: 500;
+}
+
+form .form-control,
+form .form-select {
+  border-radius: 6px;
+  border-color: #ced4da;
+}
+
+form .form-control:focus,
+form .form-select:focus {
+  border-color: #495057;
+  box-shadow: none;
+}
+
+form .btn {
+  min-width: 120px;
+}
+
+/* Footer */
+footer {
+  background-color: #dee2e6;
+  color: #6c757d;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 15px 0;
+  border-top: 1px solid #ced4da;
+}
+
+/* Responsive Flex Wrap */
+@media (max-width: 768px) {
+  .navbar .form-control {
+    width: 100%;
+  }
+
+  .d-flex.flex-wrap.gap-2 {
+    flex-direction: column;
+  }
+
+  .btn,
+  .form-select {
+    width: 100%;
+  }
+}
+
+/* Utilities */
+.mt-auto {
+  margin-top: auto !important;
+}
+
+.flex-grow-1 {
+  flex-grow: 1 !important;
+}
+
+/* Additional Styling */
+select.form-select.w-auto {
+  min-width: 160px;
+}
+
+input::placeholder {
+  color: #adb5bd;
+}
+
+.invalid-feedback {
+  font-size: 0.85rem;
+}
+
+/* Transitions */
+.btn,
+.form-control,
+.form-select {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Extra Margin Bottom for Card Container */
+#employeeList {
+  margin-bottom: 40px;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #adb5bd;
+  border-radius: 4px;
+}
+
+/* Page Transitions */
+body {
+  opacity: 0;
+  animation: fadeIn 0.4s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
