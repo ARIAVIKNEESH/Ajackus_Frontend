@@ -1,6 +1,5 @@
 document.getElementById("employeeForm").addEventListener("submit", function (e) {
   e.preventDefault();
-
   const form = e.target;
   if (!form.checkValidity()) {
     form.classList.add("was-validated");
@@ -16,9 +15,10 @@ document.getElementById("employeeForm").addEventListener("submit", function (e) 
     role: form.role.value.trim(),
   };
 
-  console.log("New Employee Submitted:", newEmployee);
-  alert("Employee added successfully (console log only, no backend)");
+  let employees = JSON.parse(localStorage.getItem("employees")) || [];
+  employees.push(newEmployee);
+  localStorage.setItem("employees", JSON.stringify(employees));
 
-  form.reset();
-  form.classList.remove("was-validated");
+  alert("Employee added successfully.");
+  window.location.href = "index.html";
 });
