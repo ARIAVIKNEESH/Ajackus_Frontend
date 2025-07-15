@@ -1,4 +1,4 @@
-const employees = [
+const defaultEmployees = [
   { id: 'E001', firstName: 'John', lastName: 'Doe', email: 'john.doe@example.com', department: 'HR', role: 'Manager' },
   { id: 'E002', firstName: 'Jane', lastName: 'Smith', email: 'jane.smith@example.com', department: 'Engineering', role: 'Developer' },
   { id: 'E003', firstName: 'Michael', lastName: 'Brown', email: 'michael.brown@example.com', department: 'Sales', role: 'Executive' },
@@ -43,3 +43,16 @@ const employees = [
   { id: 'E039', firstName: 'Aaron', lastName: 'Carter', email: 'aaron.carter@example.com', department: 'IT', role: 'Engineer' },
   { id: 'E040', firstName: 'Nora', lastName: 'Mitchell', email: 'nora.mitchell@example.com', department: 'HR', role: 'Executive' }
 ];
+
+const savedEmployees = JSON.parse(localStorage.getItem("employees")) || [];
+
+const mergedEmployees = [...defaultEmployees];
+savedEmployees.forEach(se => {
+  if (!mergedEmployees.some(de => de.email === se.email)) {
+    mergedEmployees.push(se);
+  }
+});
+
+localStorage.setItem("employees", JSON.stringify(mergedEmployees));
+
+var employees = mergedEmployees;
